@@ -26,6 +26,8 @@ class StatSet : Iterable<Map.Entry<StatBase<*>, Any>> {
         return add(statBase, value)
     }
 
+    fun <A> value(key: StatBase<A>): A = this[key]
+
     fun copy(): StatSet {
         val set = StatSet()
         set.statsRaw.putAll(this.statsRaw)
